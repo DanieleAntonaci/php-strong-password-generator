@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-strong-password-generator</title>
     <?php
-        require_once __DIR__ . "/libs/helper.php";
+        session_start();
 
-        $passwordLength = $_GET['passwordLength'] ?? 0;
+        require_once __DIR__ . "/libs/helper.php";
     ?>
 </head>
 <body>
     <form method="get">
         <input type="number" name="passwordLength"
-            <?php
-                echo 'value="' . $passwordLength . '"';
-            ?>
+    
         >
         <input type="submit" value="number">
     </form>
 
     <?php
-        echo  generateRandomString($passwordLength)
+        if($passwordLength > 0){
+
+            $_SESSION['password'] = generateRandomString($passwordLength);
+            header('Location: ./passwordPage.php');
+    }
+    ;
     ?>
 </body>
 </html>

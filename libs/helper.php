@@ -1,19 +1,20 @@
 <?php
+    $passwordLength = $_GET['passwordLength'] ?? 0;
+    function generateRandomString($passwordLength) {
 
-function generateRandomString($passwordLength) {
+        // caratteri per la password
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?$?%^&*()_-+={[}]:;@#|\<,>.?/';
 
-    // caratteri per la password
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?$?%^&*()_-+={[}]:;@#|\<,>.?/';
+        // lunghezza stringa caratteri
+        $charactersLength = strlen($characters);
 
-    // lunghezza stringa caratteri
-    $charactersLength = strlen($characters);
+        // stringa di ritorno
+        $randomPassword = '';
 
-    // stringa di ritorno
-    $randomString = '';
-
-    // ciclo generazioe stringa
-    for ($i = 0; $i < $passwordLength; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-};
+        // ciclo generazioe stringa
+        for ($i = 0; $i < $passwordLength; $i++) {
+            $randomPassword .= $characters[rand(0, $charactersLength - 1)];
+        }
+       
+        return $randomPassword;
+    };
