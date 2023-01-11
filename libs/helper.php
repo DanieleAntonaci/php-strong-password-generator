@@ -3,7 +3,7 @@
 function generateRandomString($passwordLength) {
 
     // caratteri per la password
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,/?><"|"[]{}()';
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?$?%^&*()_-+={[}]:;@#|\<,>.?/';
 
     // lunghezza stringa caratteri
     $charactersLength = strlen($characters);
