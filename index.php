@@ -13,7 +13,11 @@
 </head>
 <body>
     <form method="get">
-        <input type="number" name="passwordLength">
+        <input type="number" name="passwordLength"
+            <?php
+                echo 'value="' . $passwordLength . '"';
+            ?>
+        >
         <input type="submit" value="number">
     </form>
 
