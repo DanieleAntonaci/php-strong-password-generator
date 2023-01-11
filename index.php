@@ -6,26 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-strong-password-generator</title>
     <?php
+        require_once __DIR__ . "/libs/helper.php";
+
         $passwordLength = $_GET['passwordLength'] ?? 0;
-
-        function generateRandomString($passwordLength) {
-
-            // caratteri per la password
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,/?><"|"[]{}()';
-
-            // lunghezza stringa caratteri
-            $charactersLength = strlen($characters);
-
-            // stringa di ritorno
-            $randomString = '';
-
-            // ciclo generazioe stringa
-            for ($i = 0; $i < $passwordLength; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
-        }
-
     ?>
 </head>
 <body>
