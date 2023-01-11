@@ -9,9 +9,9 @@
         $passwordLength = $_GET['passwordLength'] ?? 0;
 
         function generateRandomString($passwordLength) {
-            
+
             // caratteri per la password
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,/?><"|"[]{}()';
 
             // lunghezza stringa caratteri
             $charactersLength = strlen($characters);
